@@ -1,4 +1,4 @@
-{{- $regitry_url := (.Get 0) -}}
+{{- $regitry_url :=  printf "https://raw.githubusercontent.com/falcosecurity/rules/falco-rules-%s/rules/falco_rules.yaml" .Site.Params.rulesversion -}}
 {{- $dataYAML := resources.GetRemote $regitry_url -}}
 {{- $content := $dataYAML.Content | replaceRE `#.*\n` "" | transform.Unmarshal }}
 

@@ -1,10 +1,12 @@
 ---
 title: Default Rules
-description: List of default rules provided by the community (syscalls only)
+description: List of default rules for Falco
 linktitle: Default Rules
 weight: 90
 ---
 
-Ref: https://github.com/falcosecurity/rules/blob/main/rules/falco_rules.yaml
+Falco provides default rules, they are maintained by the maintainers with contributions from the community, more information on this [page](/docs/rules/default-custom/). This list presents the default rules based on syscall events.
 
-{{< rules_list "https://raw.githubusercontent.com/falcosecurity/rules/main/rules/falco_rules.yaml" >}}
+You can find them in the official [repository](https://github.com/falcosecurity/rules/blob/main/rules/falco_rules.yaml).
+
+{{< rules_list >}}
