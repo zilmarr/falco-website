@@ -19,6 +19,13 @@
         background-color: #00aec7;
         font-weight: bold;
     }
+
+    #search {
+        width: 100%;
+        padding: 12px 20px 12px 10px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
     
     .rule {
         background-color: #fff;
@@ -84,7 +91,8 @@
     }
 </style>
 
-<div class="rules">
+<div class="rules" id="rules">
+    <input type="text" id="search" onkeyup="search()" placeholder="Search for rules...">
     {{- range $content }}
         {{ if .rule }}
             <button type="button" class="collapsible">{{ .rule }}</button>
@@ -140,5 +148,21 @@
             this.style.backgroundColor = "#00aec7";
         }
       });
+    }
+
+    function search() {
+        var input = document.getElementById('search');
+        var filter = input.value.toUpperCase();
+        var div = document.getElementById("rules");
+        var buttons = div.getElementsByTagName('button');
+        
+        for (i = 0; i < buttons.length; i++) {
+            txt = buttons[i].innerText;
+            if (txt.toUpperCase().indexOf(filter) > -1) {
+                buttons[i].style.display = "";
+            } else {
+                buttons[i].style.display = "none";
+            }
+        }
     }
     </script>
