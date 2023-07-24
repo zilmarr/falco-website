@@ -162,6 +162,9 @@
                 buttons[i].style.display = "";
             } else {
                 buttons[i].style.display = "none";
+                buttons[i].style.backgroundColor = "#fff";
+                var content = buttons[i].nextElementSibling;
+                content.style.display = "none";
             }
         }
     }
